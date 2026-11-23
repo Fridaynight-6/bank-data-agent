@@ -1,0 +1,200 @@
+{
+  "row_count": 21000,
+  "column_count": 16,
+  "exact_duplicate_count": 0,
+  "constant_columns": [],
+  "label_distribution": {
+    "no": {
+      "count": 19990,
+      "rate": 0.951905
+    },
+    "yes": {
+      "count": 1010,
+      "rate": 0.048095
+    }
+  },
+  "fields": {
+    "age": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 42,
+      "nonstandard_format_count": 0,
+      "unparseable_or_missing_count": 0,
+      "min": 20.0,
+      "median": 40.0,
+      "max": 61.0,
+      "iqr_outlier_count": 0,
+      "iqr_lower_bound": 9.0,
+      "iqr_upper_bound": 73.0,
+      "business_rule_violation_count": 0
+    },
+    "job": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 13,
+      "whitespace_or_case_issue_count": 0,
+      "unknown_category_count": 161,
+      "top_values": {
+        "blue-collar": 5434,
+        "management": 3827,
+        "technician": 3413,
+        "admin.": 2364,
+        "services": 2194,
+        "retired": 852,
+        "entrepreneur": 753,
+        "housemaid": 696,
+        "self-employed": 668,
+        "unemployed": 477
+      }
+    },
+    "marital": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 4,
+      "whitespace_or_case_issue_count": 0,
+      "unknown_category_count": 0,
+      "top_values": {
+        "married": 13381,
+        "single": 5056,
+        "divorced": 2553,
+        "missing": 10
+      }
+    },
+    "education": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 5,
+      "whitespace_or_case_issue_count": 0,
+      "unknown_category_count": 948,
+      "top_values": {
+        "secondary": 11174,
+        "tertiary": 5098,
+        "primary": 3770,
+        "unknown": 948,
+        "missing": 10
+      }
+    },
+    "default": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 2,
+      "whitespace_or_case_issue_count": 0,
+      "unknown_category_count": 0,
+      "top_values": {
+        "no": 20478,
+        "yes": 522
+      }
+    },
+    "balance": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 5231,
+      "nonstandard_format_count": 0,
+      "unparseable_or_missing_count": 0,
+      "min": -8019.0,
+      "median": 354.0,
+      "max": 980124.0,
+      "iqr_outlier_count": 2239,
+      "iqr_lower_bound": -1729.0,
+      "iqr_upper_bound": 2967.0,
+      "negative_count": 2373
+    },
+    "housing": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 2,
+      "whitespace_or_case_issue_count": 0,
+      "unknown_category_count": 0,
+      "top_values": {
+        "yes": 12856,
+        "no": 8144
+      }
+    },
+    "loan": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 2,
+      "whitespace_or_case_issue_count": 0,
+      "unknown_category_count": 0,
+      "top_values": {
+        "no": 16829,
+        "yes": 4171
+      }
+    },
+    "contact": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 4,
+      "whitespace_or_case_issue_count": 0,
+      "unknown_category_count": 12679,
+      "top_values": {
+        "unknown": 12679,
+        "cellular": 7489,
+        "telephone": 822,
+        "missing": 10
+      }
+    },
+    "day": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 31,
+      "nonstandard_format_count": 0,
+      "unparseable_or_missing_count": 0,
+      "min": 1.0,
+      "median": 15.0,
+      "max": 31.0,
+      "iqr_outlier_count": 0,
+      "iqr_lower_bound": -14.5,
+      "iqr_upper_bound": 45.5
+    },
+    "month": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 4,
+      "whitespace_or_case_issue_count": 0,
+      "unknown_category_count": 0,
+      "top_values": {
+        "may": 7957,
+        "jul": 6380,
+        "jun": 4486,
+        "aug": 2177
+      }
+    },
+    "duration": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 1347,
+      "nonstandard_format_count": 0,
+      "unparseable_or_missing_count": 0,
+      "min": 0.0,
+      "median": 178.0,
+      "max": 3881.0,
+      "iqr_outlier_count": 1585,
+      "iqr_lower_bound": -218.0,
+      "iqr_upper_bound": 638.0
+    },
+    "campaign": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 48,
+      "nonstandard_format_count": 0,
+      "unparseable_or_missing_count": 0,
+      "min": 1.0,
+      "median": 2.0,
+      "max": 63.0,
+      "iqr_outlier_count": 1762,
+      "iqr_lower_bound": -2.0,
+      "iqr_upper_bound": 6.0
+    },
+    "age_missing": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 2
+    },
+    "age_invalid": {
+      "missing_count": 0,
+      "missing_rate": 0.0,
+      "distinct_count": 2
+    }
+  }
+}

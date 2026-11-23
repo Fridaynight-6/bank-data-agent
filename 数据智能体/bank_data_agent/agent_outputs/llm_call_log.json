@@ -1,0 +1,42 @@
+{
+  "calls": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-02T23:09:48.815393+08:00",
+      "model": "deepseek-v4-flash-0731",
+      "base_url": "https://cn-beijing.maas.qianwenaiapi.com/compatible-mode/v1",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "你是银行营销数据的质量处理规划器。你只生成清洗计划，不直接修改数据。必须输出一个 JSON 对象，不要输出 Markdown 或解释。只能选择 schema 允许的操作；标签 y 绝不修改；unknown 是业务类别而非缺失；负余额保留，极值不自动删除；有完全重复记录必须先去重；数值填充只能使用训练集中位数；类别缺失填为 missing。年龄有效范围固定为 [18, 100]。若收到复检反馈，必须逐项修正。"
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"根据质量画像生成完整清洗计划\", \"json_schema\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"plan_version\", \"target\", \"label_policy\", \"outlier_policy\", \"actions\"], \"properties\": {\"plan_version\": {\"type\": \"string\"}, \"target\": {\"const\": \"y\"}, \"label_policy\": {\"const\": \"不修改标签\"}, \"outlier_policy\": {\"type\": \"string\"}, \"actions\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"required\": [\"action\"], \"properties\": {\"action\": {\"type\": \"string\", \"enum\": [\"drop_constant_columns\", \"drop_exact_duplicates\", \"impute_missing\", \"invalidate_business_rule_violations\", \"parse_numeric_formats\", \"standardize_categories\"]}, \"columns\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"column\": {\"type\": \"string\"}, \"valid_range\": {\"type\": \"array\", \"prefixItems\": [{\"type\": \"number\"}, {\"type\": \"number\"}], \"minItems\": 2, \"maxItems\": 2}}}}}}, \"quality_report\": {\"row_count\": 21050, \"column_count\": 17, \"exact_duplicate_count\": 50, \"constant_columns\": [\"pdays\", \"previous\", \"poutcome\"], \"label_distribution\": {\"no\": {\"count\": 20037, \"rate\": 0.951876}, \"yes\": {\"count\": 1013, \"rate\": 0.048124}}, \"fields\": {\"age\": {\"missing_count\": 10, \"missing_rate\": 0.000475, \"distinct_count\": 79, \"nonstandard_format_count\": 15, \"unparseable_or_missing_count\": 10, \"min\": 20.0, \"median\": 40.0, \"max\": 299.0, \"iqr_outlier_count\": 25, \"iqr_lower_bound\": 9.0, \"iqr_upper_bound\": 73.0, \"business_rule_violation_count\": 25}, \"job\": {\"missing_count\": 10, \"missing_rate\": 0.000475, \"distinct_count\": 17, \"whitespace_or_case_issue_count\": 10, \"unknown_category_count\": 161}, \"marital\": {\"missing_count\": 10, \"missing_rate\": 0.000475, \"distinct_count\": 3, \"whitespace_or_case_issue_count\": 0, \"unknown_category_count\": 0}, \"education\": {\"missing_count\": 10, \"missing_rate\": 0.000475, \"distinct_count\": 4, \"whitespace_or_case_issue_count\": 0, \"unknown_category_count\": 949}, \"default\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 2, \"whitespace_or_case_issue_count\": 0, \"unknown_category_count\": 0}, \"balance\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 5243, \"nonstandard_format_count\": 15, \"unparseable_or_missing_count\": 0, \"min\": -8019.0, \"median\": 354.0, \"max\": 980124.0, \"iqr_outlier_count\": 2243, \"iqr_lower_bound\": -1728.625, \"iqr_upper_bound\": 2966.375, \"negative_count\": 2380}, \"housing\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 4, \"whitespace_or_case_issue_count\": 10, \"unknown_category_count\": 0}, \"loan\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 2, \"whitespace_or_case_issue_count\": 0, \"unknown_category_count\": 0}, \"contact\": {\"missing_count\": 10, \"missing_rate\": 0.000475, \"distinct_count\": 3, \"whitespace_or_case_issue_count\": 0, \"unknown_category_count\": 12711}, \"day\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 31, \"nonstandard_format_count\": 0, \"unparseable_or_missing_count\": 0, \"min\": 1.0, \"median\": 15.0, \"max\": 31.0, \"iqr_outlier_count\": 0, \"iqr_lower_bound\": -14.5, \"iqr_upper_bound\": 45.5}, \"month\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 4, \"whitespace_or_case_issue_count\": 0, \"unknown_category_count\": 0}, \"duration\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 1347, \"nonstandard_format_count\": 0, \"unparseable_or_missing_count\": 0, \"min\": 0.0, \"median\": 178.0, \"max\": 3881.0, \"iqr_outlier_count\": 1589, \"iqr_lower_bound\": -218.0, \"iqr_upper_bound\": 638.0}, \"campaign\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 48, \"nonstandard_format_count\": 0, \"unparseable_or_missing_count\": 0, \"min\": 1.0, \"median\": 2.0, \"max\": 63.0, \"iqr_outlier_count\": 1763, \"iqr_lower_bound\": -2.0, \"iqr_upper_bound\": 6.0}, \"pdays\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 1, \"nonstandard_format_count\": 0, \"unparseable_or_missing_count\": 0, \"min\": -1.0, \"median\": -1.0, \"max\": -1.0, \"iqr_outlier_count\": 0, \"iqr_lower_bound\": -1.0, \"iqr_upper_bound\": -1.0}, \"previous\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 1, \"nonstandard_format_count\": 0, \"unparseable_or_missing_count\": 0, \"min\": 0.0, \"median\": 0.0, \"max\": 0.0, \"iqr_outlier_count\": 0, \"iqr_lower_bound\": 0.0, \"iqr_upper_bound\": 0.0}, \"poutcome\": {\"missing_count\": 0, \"missing_rate\": 0.0, \"distinct_count\": 1, \"whitespace_or_case_issue_count\": 0, \"unknown_category_count\": 21050}}}, \"previous_feedback\": null}"
+          }
+        ],
+        "parameters": {
+          "temperature": 1
+        }
+      },
+      "status": "success",
+      "response_text": "{\n  \"plan_version\": \"1.0\",\n  \"target\": \"y\",\n  \"label_policy\": \"不修改标签\",\n  \"outlier_policy\": \"不自动删除极值；负余额保留；仅对年龄越界（超出[18,100]）执行业务规则无效化处理\",\n  \"actions\": [\n    {\n      \"action\": \"drop_constant_columns\",\n      \"columns\": [\"pdays\", \"previous\", \"poutcome\"]\n    },\n    {\n      \"action\": \"drop_exact_duplicates\"\n    },\n    {\n      \"action\": \"parse_numeric_formats\",\n      \"columns\": [\"age\", \"balance\"]\n    },\n    {\n      \"action\": \"invalidate_business_rule_violations\",\n      \"column\": \"age\",\n      \"valid_range\": [18, 100]\n    },\n    {\n      \"action\": \"impute_missing\",\n      \"columns\": [\"age\", \"job\", \"marital\", \"education\", \"contact\"]\n    },\n    {\n      \"action\": \"standardize_categories\",\n      \"columns\": [\"job\", \"housing\"]\n    }\n  ]\n}",
+      "usage": {
+        "prompt_tokens": 1766,
+        "total_tokens": 2885,
+        "completion_tokens": 1119,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 875
+        }
+      },
+      "estimated_cost_usd": null,
+      "cost_note": "仅在配置每百万 token 单价时估算",
+      "duration_seconds": 11.84580890001962,
+      "finished_at": "2026-11-02T23:10:00.661230+08:00"
+    }
+  ]
+}

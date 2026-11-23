@@ -1,0 +1,51 @@
+{
+  "plan_version": "1.0",
+  "target": "y",
+  "label_policy": "不修改标签",
+  "outlier_policy": "不自动删除极值；负余额保留；仅对年龄越界（超出[18,100]）执行业务规则无效化处理",
+  "actions": [
+    {
+      "action": "drop_constant_columns",
+      "columns": [
+        "pdays",
+        "previous",
+        "poutcome"
+      ]
+    },
+    {
+      "action": "drop_exact_duplicates"
+    },
+    {
+      "action": "parse_numeric_formats",
+      "columns": [
+        "age",
+        "balance"
+      ]
+    },
+    {
+      "action": "invalidate_business_rule_violations",
+      "column": "age",
+      "valid_range": [
+        18,
+        100
+      ]
+    },
+    {
+      "action": "impute_missing",
+      "columns": [
+        "age",
+        "job",
+        "marital",
+        "education",
+        "contact"
+      ]
+    },
+    {
+      "action": "standardize_categories",
+      "columns": [
+        "job",
+        "housing"
+      ]
+    }
+  ]
+}

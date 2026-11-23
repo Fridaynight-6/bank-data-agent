@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-11-02T16:45:27.876832+08:00",
+  "finished_at": "2026-11-02T16:45:29.688346+08:00",
+  "duration_seconds": 1.811514,
+  "input_path": "D:\\KimiData\\kimi\\Workspaces\\数据智能体2\\银行数据集（已添加问题）.csv",
+  "input_sha256": "90ce732d70c5025185086bdbbb0a8bb9d0a748600c2604d2d279beceb6fbdbb9",
+  "parameters": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "class_weight": "balanced",
+    "threshold": 0.5
+  },
+  "environment": {
+    "python": "3.12.16",
+    "pandas": "3.0.2",
+    "scikit_learn": "1.9.0"
+  },
+  "llm_calls": 0,
+  "stages": [
+    {
+      "stage": "quality_profile",
+      "status": "success"
+    },
+    {
+      "stage": "cleaning_plan",
+      "status": "success"
+    },
+    {
+      "stage": "cleaning",
+      "status": "success"
+    },
+    {
+      "stage": "train_and_evaluate",
+      "status": "success"
+    }
+  ]
+}

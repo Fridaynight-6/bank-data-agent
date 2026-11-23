@@ -1,0 +1,35 @@
+{
+  "train_numeric_medians": {
+    "age": 40.0,
+    "balance": 350.0,
+    "day": 15.0,
+    "duration": 178.0,
+    "campaign": 2.0,
+    "pdays": -1.0,
+    "previous": 0.0
+  },
+  "dropped_constant_columns": [
+    "pdays",
+    "previous",
+    "poutcome"
+  ],
+  "numeric_features": [
+    "age",
+    "balance",
+    "day",
+    "duration",
+    "campaign",
+    "age_missing",
+    "age_invalid"
+  ],
+  "categorical_features": [
+    "job",
+    "marital",
+    "education",
+    "default",
+    "housing",
+    "loan",
+    "contact",
+    "month"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "started_at": "2026-11-02T23:09:48.387655+08:00",
+  "finished_at": "2026-11-02T23:10:01.807257+08:00",
+  "duration_seconds": 13.419602,
+  "input_path": "D:\\数据智能体\\bank_data_agent\\银行数据集（已添加问题）.csv",
+  "input_sha256": "90ce732d70c5025185086bdbbb0a8bb9d0a748600c2604d2d279beceb6fbdbb9",
+  "parameters": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "max_attempts": 3,
+    "fallback_to_rules": true
+  },
+  "environment": {
+    "python": "3.15.2",
+    "pandas": "3.1.0",
+    "scikit_learn": "1.9.1"
+  },
+  "planner": "llm",
+  "llm_calls": 1,
+  "estimated_cost_usd": null,
+  "cost_note": "None 表示未配置价格或 API 未返回 token 用量",
+  "fallback_used": false,
+  "status": "success"
+}

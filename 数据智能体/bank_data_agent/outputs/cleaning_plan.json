@@ -1,0 +1,67 @@
+{
+  "plan_version": "rule-based-baseline-v1",
+  "target": "y",
+  "label_policy": "不修改标签",
+  "outlier_policy": "负余额保留；其他极端值仅标记，不自动删除",
+  "actions": [
+    {
+      "action": "drop_exact_duplicates",
+      "count": 50,
+      "reason": "完全重复记录会造成训练/测试泄漏"
+    },
+    {
+      "action": "parse_numeric_formats",
+      "columns": [
+        "age",
+        "balance"
+      ],
+      "rules": [
+        "移除 EUR 前缀",
+        "移除岁后缀",
+        "转换为浮点数"
+      ]
+    },
+    {
+      "action": "standardize_categories",
+      "columns": [
+        "job",
+        "housing"
+      ],
+      "rules": [
+        "去除首尾空格",
+        "统一小写",
+        "保留 unknown 类别"
+      ]
+    },
+    {
+      "action": "impute_missing",
+      "columns": [
+        "age",
+        "job",
+        "marital",
+        "education",
+        "contact"
+      ],
+      "numeric_strategy": "仅使用训练集的中位数",
+      "categorical_strategy": "填为独立的 missing 类别"
+    },
+    {
+      "action": "invalidate_business_rule_violations",
+      "column": "age",
+      "valid_range": [
+        18,
+        100
+      ],
+      "then": "转为缺失并添加 age_invalid 指示列"
+    },
+    {
+      "action": "drop_constant_columns",
+      "columns": [
+        "pdays",
+        "previous",
+        "poutcome"
+      ],
+      "reason": "对当前训练数据没有区分能力"
+    }
+  ]
+}
